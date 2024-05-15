@@ -11,9 +11,6 @@ Exploratory Data Analysis (EDA) and Machine Learning (ML) models to predict the 
 ├── heart_failure_eda.ipynb
 ├── heart_failure_ml_models.ipynb
 ├── ml_api
-│   ├── __pycache__
-│   │   ├── main.cpython-311.pyc
-│   │   └── main.cpython-312.pyc
 │   ├── main.py
 │   ├── requirements.txt
 │   └── xgb_ml_model.json
