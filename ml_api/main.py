@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from xgboost import XGBClassifier
 import numpy as np
+from model import make_prediction
 
 """
 uvicorn main:app --reload
@@ -30,7 +31,7 @@ def health():
 
 
 @app.post("/model")
-def make_prediction(record: PatientMedicalRecords):
+def model_prediction(record: PatientMedicalRecords):
     """
     Given input vector of patient medical records return true or false if patient is deceased
     Ex.
@@ -48,7 +49,6 @@ def make_prediction(record: PatientMedicalRecords):
     record_dict = record.model_dump()
     data = [val for val in record_dict.values()]
     vector = np.array(data).reshape(1, -1)
-    prediction = int(xgb_clf.predict(vector)[0])
-    patient_deceased = True if prediction == 1 else False
+    patient_deceased = make_prediction(xgb_clf, vector)
 
     return {"patient_deceased": patient_deceased}
