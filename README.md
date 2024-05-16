@@ -1,4 +1,4 @@
-# Heart Failure Patient Classifcation Machine Learning Model
+# Heart Failure Patient Classification Machine Learning Model
 
 ## Project Overview
 
