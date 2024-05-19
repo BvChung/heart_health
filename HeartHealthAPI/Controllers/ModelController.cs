@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HeartHealthAPI.Models;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +9,20 @@ namespace HeartHealthAPI.Controllers
     [ApiController]
     public class ModelController : ControllerBase
     {
+        private readonly ILogger<ModelController> _logger;
+
+        public ModelController(ILogger<ModelController> logger)
+        {
+            this._logger = logger;
+        }
+
         // GET: api/<ModelController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public MedicalRecords Get()
         {
-            return new string[] { "value1", "value2" };
+            MedicalRecords mr = new(75, 0, 582, 20, 26500, 1.9, 130, 4);
+
+            return mr;
         }
 
         // GET api/<ModelController>/5

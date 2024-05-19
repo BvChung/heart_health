@@ -1,6 +1,15 @@
 ﻿namespace HeartHealthAPI.Models
 {
-    public readonly record struct MedicalRecords(int age, int anemia, int creatine_phosphokinase, int ejection_fraction, int platelets, float serumCreatinine, int serumSodium, int daysUntilFollowUp)
+    public readonly record struct MedicalRecords(
+        int Age,
+        int Anemia,
+        int CreatinePhosphokinase,
+        int EjectionFraction,
+        int Platelets,
+        double SerumCreatinine,
+        int SerumSodium,
+        int DaysUntilFollowUp
+        )
     {
         /*
          * class PatientMedicalRecords(BaseModel):
