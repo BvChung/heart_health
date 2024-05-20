@@ -7,6 +7,7 @@ Exploratory Data Analysis (EDA) and Machine Learning (ML) models were utilized t
 ## Code Structure
 
 ```bash
+
 .
 ├── heart_failure_eda.ipynb
 ├── heart_failure_ml_models.ipynb
