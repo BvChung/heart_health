@@ -34,8 +34,17 @@ namespace HeartHealthAPI.Controllers
 
         // POST api/<ModelController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] 
+        int Age,
+        int Anemia,
+        int CreatinePhosphokinase,
+        int EjectionFraction,
+        int Platelets,
+        double SerumCreatinine,
+        int SerumSodium,
+        int DaysUntilFollowUp)
         {
+            MedicalRecords mr = new(Age, Anemia, CreatinePhosphokinase, EjectionFraction, Platelets, SerumCreatinine, SerumSodium, DaysUntilFollowUp);
         }
 
         // PUT api/<ModelController>/5
